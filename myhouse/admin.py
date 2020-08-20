@@ -1,15 +1,17 @@
 from django.contrib import admin
+
+# Register your models here.
 from .models import House, Community
 
 
-# Register your models here.
-
 class CommunityAdmin(admin.ModelAdmin):
+
     '''设置列表可显示的字段'''
-    list_display = ('name', 'city',)
+    list_display = ('name', 'city', )
 
     '''每页显示条目数'''
     list_per_page = 10
+
     '''设置可编辑字段'''
     list_editable = ('city',)
 
@@ -18,17 +20,19 @@ class CommunityAdmin(admin.ModelAdmin):
 
 
 class HouseAdmin(admin.ModelAdmin):
+
     '''表单字段'''
-    fields = ('description', 'community', 'bedroom', 'direction', 'floor', 'area', 'price',)
+    fields = ('description', 'community', 'bedroom', 'direction', 'floor', 'area', 'price', )
 
     '''设置列表可显示的字段'''
-    list_display = ('description', 'community', 'price', 'bedroom', 'direction', 'floor', 'area', 'area_class',)
+    list_display = ('description', 'community', 'price', 'bedroom', 'direction', 'floor', 'area', 'area_class', )
 
     '''设置过滤选项'''
     list_filter = ('bedroom', 'direction', 'floor', 'area_class')
 
     '''每页显示条目数'''
     list_per_page = 10
+
     '''设置可编辑字段'''
     list_editable = ('bedroom', 'direction', 'floor', 'area_class',)
 

@@ -1,7 +1,6 @@
+<!DOCTYPE html>
 {% load static %}
 {% load core_tags_filters %}
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,50 +8,66 @@
     <meta name="description"
           content="Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.">
     <title>肖氏房产</title>
+
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/">
+    <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <style>
         html {
             box-sizing: border-box;
         }
+
         * {
             box-sizing: inherit;
         }
+
         *:before, *:after {
             box-sizing: inherit;
         }
+
         body {
             overflow-x: hidden; /* Prevent scroll on narrow devices */
             font-family: 'Inter', Arial, sans-serif;
             color: #8A91B4;
             background: #F6F8FF;
         }
+
         table th, td {
             color: #666;
         }
+
         body a {
             color: #666;
         }
+
         body a:hover {
             text-decoration: none;
             color: #0071BC;
         }
+
         body {
             padding-top: 56px;
         }
+
         .navbar .navbar-toggler {
             border: none;
             padding: 5px;
         }
+
         .navbar-nav .nav-item .nav-link:hover {
+
             color: orange !important;
         }
+
         .navbar-nav > li.active > a {
             font-weight: 500;
             color: #666 !important;
         }
+
         @media (max-width: 767.98px) {
+
             .offcanvas-collapse {
                 position: fixed;
                 top: 56px; /* Height of navbar */
@@ -68,11 +83,14 @@
                 -webkit-transform: translateX(100%);
                 transform: translateX(100%);
             }
+
             .offcanvas-collapse.open {
                 -webkit-transform: translateX(-1rem);
                 transform: translateX(-1rem); /* Account for horizontal padding on navbar */
             }
+
         }
+
         #myTab li {
             background: none;
             border: none;
@@ -80,16 +98,19 @@
             margin-right: 15px;
             padding-right: 0px;
         }
+
         #myTab li a, #myTab a {
             border: none;
             background: none;
             padding-left: 0px;
             padding-right: 0px;
         }
+
         #myTab li a.active {
             color: orange;
             border-bottom: 2px solid orange;
         }
+
         @supports (-webkit-appearance: none) or (-moz-appearance: none) {
             input[type='checkbox'],
             input[type='radio'] {
@@ -115,6 +136,7 @@
                 -webkit-transition: background .3s, border-color .3s, box-shadow .2s;
                 transition: background .3s, border-color .3s, box-shadow .2s;
             }
+
             input[type='checkbox']:after,
             input[type='radio']:after {
                 content: '';
@@ -127,6 +149,7 @@
                 transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
                 transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s), -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
             }
+
             input[type='checkbox']:checked,
             input[type='radio']:checked {
                 --b: var(--active);
@@ -135,41 +158,50 @@
                 --d-t: .6s;
                 --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
             }
+
             input[type='checkbox']:disabled,
             input[type='radio']:disabled {
                 --b: var(--disabled);
                 cursor: not-allowed;
                 opacity: .9;
             }
+
             input[type='checkbox']:disabled:checked,
             input[type='radio']:disabled:checked {
                 --b: var(--disabled-inner);
                 --bc: var(--border);
             }
+
             input[type='checkbox']:disabled + label,
             input[type='radio']:disabled + label {
                 cursor: not-allowed;
             }
+
             input[type='checkbox']:hover:not(:checked):not(:disabled),
             input[type='radio']:hover:not(:checked):not(:disabled) {
                 --bc: var(--border-hover);
             }
+
             input[type='checkbox']:focus,
             input[type='radio']:focus {
                 box-shadow: 0 0 0 var(--focus);
             }
+
             input[type='checkbox']:not(.switch),
             input[type='radio']:not(.switch) {
                 width: 21px;
             }
+
             input[type='checkbox']:not(.switch):after,
             input[type='radio']:not(.switch):after {
                 opacity: var(--o, 0);
             }
+
             input[type='checkbox']:not(.switch):checked,
             input[type='radio']:not(.switch):checked {
                 --o: 1;
             }
+
             input[type='checkbox'] + label,
             input[type='radio'] + label {
                 font-size: 14px;
@@ -179,9 +211,11 @@
                 cursor: pointer;
                 margin-left: 4px;
             }
+
             input[type='checkbox']:not(.switch) {
                 border-radius: 7px;
             }
+
             input[type='checkbox']:not(.switch):after {
                 width: 5px;
                 height: 9px;
@@ -193,13 +227,16 @@
                 -webkit-transform: rotate(var(--r, 20deg));
                 transform: rotate(var(--r, 20deg));
             }
+
             input[type='checkbox']:not(.switch):checked {
                 --r: 43deg;
             }
+
             input[type='checkbox'].switch {
                 width: 38px;
                 border-radius: 11px;
             }
+
             input[type='checkbox'].switch:after {
                 left: 2px;
                 top: 2px;
@@ -210,16 +247,20 @@
                 -webkit-transform: translateX(var(--x, 0));
                 transform: translateX(var(--x, 0));
             }
+
             input[type='checkbox'].switch:checked {
                 --ab: var(--active-inner);
                 --x: 17px;
             }
+
             input[type='checkbox'].switch:disabled:not(:checked):after {
                 opacity: .6;
             }
+
             input[type='radio'] {
                 border-radius: 50%;
             }
+
             input[type='radio']:after {
                 width: 19px;
                 height: 19px;
@@ -229,23 +270,33 @@
                 -webkit-transform: scale(var(--s, 0.7));
                 transform: scale(var(--s, 0.7));
             }
+
             input[type='radio']:checked {
                 --s: .5;
             }
         }
+
         .tb-filter-item a {
             margin-left: 20px;
         }
+
     </style>
+
+
 </head>
+
 <body>
 <nav class="navbar navbar-expand-md fixed-top navbar-light box-shadow bg-white">
     <div class="container">
+
         <a class="navbar-brand align-items-md-center" href="{% url 'house:house_filter' %}">肖氏房产网</a>
         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#">二手房</a>
@@ -256,6 +307,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-uppercase" href="#">租房</a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-uppercase" href="#" id="dropdown04" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">关于我们</a>
@@ -265,18 +317,24 @@
                     </div>
                 </li>
             </ul>
+
             <a class="btn btn-outline-secondary mb-3 mb-md-0 ml-md-3" href="main.html">登录</a>
+
         </div>
     </div>
 </nav>
 
-{% block content %}{% endblock %}
+{% block content %}
+
+{% endblock %}
+
 
 <footer class="bd-footer bg-light">
     <div class="container pt-3 pb-2 px-3 px-md-2">
         <ul class="bd-footer-links list-unstyled text-muted list-inline pb-2">
             <li class="list-inline-item">
-                <small>&#169; 肖氏房产网</small>
+
+                <small>&#169; 大江狗房产网</small>
             </li>
             <li class="list-inline-item right"><a href="https://twitter.com/getbootstrap">
                 <small>Privacy & Cookie</small>
@@ -303,9 +361,12 @@
 <script>
     $(function () {
         'use strict'
+
         $('[data-toggle="offcanvas"]').on('click', function () {
             $('.offcanvas-collapse').toggleClass('open')
         })
     })
 </script>
+
+
 </html>

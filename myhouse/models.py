@@ -2,13 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+
 class City(models.TextChoices):
+    XIAN = 'xa', '西安'
     BEIJING = 'bj', '北京'
     SHANGHAI = 'sh', '上海'
     SHENZHEN = 'sz', '深圳'
     GUANGZHOU = 'gz', '广州'
-    HANGZHOU = 'hz', '杭州',
-    XIAN = 'xa', '西安'
+    HANGZHOU = 'hz', '杭州'
 
 
 class Bedroom(models.TextChoices):
@@ -85,4 +86,5 @@ class House(models.Model):
             self.area_class = Area.A4
         else:
             self.area_class = Area.A5
-            super().save(*args, **kwargs)
+
+        super().save(*args, **kwargs)

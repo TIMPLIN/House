@@ -3,10 +3,10 @@ from .models import House
 from .filters import HouseFilter
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
 # Create your views here.
 
 
+# Filter houses
 def house_filter(request):
     base_qs = House.objects.all().select_related('community')
     f = HouseFilter(request.GET, queryset=base_qs)
